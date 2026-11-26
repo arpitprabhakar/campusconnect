@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => res.json({ status: 'CampusConnect API is running' }));
 app.use('/uploads', express.static('uploads'));
 
 app.use('/api/auth', require('./routes/auth'));
